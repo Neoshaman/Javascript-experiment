@@ -19,7 +19,7 @@ var GameGenre			= ["story","roguelike","beat'm up",
 							"management","artillery","dollhouse","adventure",
 							"rpg",,"Wrpg","Jrpg","Crpg", "collecthon","brawler"];
 function gametype() {
-	return "It's a " + RandomWord(NumPlayer) + " player " + "," +
+	return "It's a " + RandomWord(NumPlayer) + " player " + ", " +
 		RandomWord(GameView) + RandomWord(GameLevel) + "," + RandomWord(GameTick) + 
 		" " + RandomWord(GameGenre) + " game.";
 }
