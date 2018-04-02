@@ -1,8 +1,9 @@
 
 //GAME DESIGN---------------------------------------------------------------------------------------------
 //type of game			//It's a NumPlayer player GameView GameGenre game
-var NumPlayer			= ["single","multi","p2p","two","4","8",
-							"16","24","32","64","massively multi"];
+var NumPlayer			= ["single player","multi players","p2p","two players","4 players","8 players",
+							"16 players","24 players","32 players","64 players", "MMO",
+				   			"massively multi players"];
 var GameView			= ["text","side scroller","top down","first person",
 							"third person","over the shoulder","split screen",
 							"isometric","axonometric","alternate reality",
@@ -19,7 +20,7 @@ var GameGenre			= ["story","roguelike","beat'm up",
 							"management","artillery","dollhouse","adventure",
 							"rpg",,"Wrpg","Jrpg","Crpg", "collecthon","brawler"];
 function gametype() {
-	return "It's a " + RandomWord(NumPlayer) + " player " + ", " +
+	return "It's a " + RandomWord(NumPlayer) + " " + ", " +
 		RandomWord(GameView) + RandomWord(GameLevel) + "," + RandomWord(GameTick) + 
 		" " + RandomWord(GameGenre) + " game.";
 }
