@@ -71,7 +71,7 @@ var PlayerModus			= ["mentoring new life form","building a team",
 							"killing everything"];
 function concept() {
 	return	"<font color = \"green\">(Role)</font> Where the player is a " + RandomWord(PlayerRole) + "<br>" +
-	"<font color = \"green\">(Quest)</font> who want to " + RandomWord(PlayerAction) + " " + RandomWord(PlayerTarget) + " for " + RandomWord(PlayerMotivation) + "<br>" +
+	"<font color = \"green\">(Quest: action, target, motivation)</font> who want to " + RandomWord(PlayerAction) + " " + RandomWord(PlayerTarget) + " for " + RandomWord(PlayerMotivation) + "<br>" +
 	"<font color = \"green\">(Failure condition)</font> without " + RandomWord(PlayerFailure) +
 	"<br> <font color = \"green\">(Progression)</font> by " + RandomWord (PlayerModus);
 }
@@ -228,8 +228,8 @@ function setupResult(){ return SetupType() + ", " +
 //DISPLAY----------------------------------------------------------------------------------------------------------------
 function GameDesign(){
 document.getElementById("test").innerHTML =
-"<br> <font color = \"red\"> Game Type: <br></font>" + gametype() +
-"<br> <font color = \"red\">World type: <br></font>" + worldtype() +
+"<br> <font color = \"red\"> Game Type: player number, camera, level type, game tick, genre <br></font>" + gametype() +
+"<br> <font color = \"red\">World type: size, tone, genre<br></font>" + worldtype() +
 "<br> <font color = \"red\">Concept: <br></font>" + concept() +
 "<br>" +
 "<br> <font color = \"red\">Goal: <br></font>" + resolution() + //Goal -> resolution
