@@ -13,7 +13,7 @@ var GameLevel			= [" open world ", " linear ", " non linear", " corridor ",
 							" metroidvania "," immersive "," deck building "," turn based "];
 var GameTick			= [" turn based ", " real time ", " asynchrone "]
 var GameGenre			= ["story","roguelike","beat'm up",
-							"sport","combat","building","art","social"
+							"sport","combat","building","art","social",
 							"hop and bop","social","shooter","4X","puzzle","strategy",
 							"tactic","racing","simulation","driving","rogue lite",
 							"management","artillery","dollhouse","adventure",
