@@ -1,7 +1,7 @@
 
 //GAME DESIGN---------------------------------------------------------------------------------------------
 //type of game			//It's a NumPlayer player GameView GameGenre game
-var NumPlayer			= ["single","asynchrone","multi","p2p","two","4","8",
+var NumPlayer			= ["single","multi","p2p","two","4","8",
 							"16","24","32","64","massively multi"];
 var GameView			= ["text","side scroller","top down","first person",
 							"third person","over the shoulder","split screen",
@@ -13,13 +13,15 @@ var GameLevel			= [" open world ", " linear ", " non linear", " corridor ",
 							" metroidvania "," immersive "," deck building "," turn based "];
 var GameTick			= [" turn based ", " real time ", " asynchrone "]
 var GameGenre			= ["story","roguelike","beat'm up",
-							"sport","open world","combat","building","art",
-							"hop and bop","rpg","shooter","4X","puzzle","strategy",
-							"tactic","racing","simulation","driving","rogue like",
+							"sport","combat","building","art","social"
+							"hop and bop","social","shooter","4X","puzzle","strategy",
+							"tactic","racing","simulation","driving","rogue lite",
 							"management","artillery","dollhouse","adventure",
-							"social","Wrpg","Jrpg","Crpg", "collecthon","brawler"];
+							"rpg",,"Wrpg","Jrpg","Crpg", "collecthon","brawler"];
 function gametype() {
-	return "It's a " + RandomWord(NumPlayer) + " player " + RandomWord(GameView) + RandomWord(GameLevel) + " " + RandomWord(GameGenre) + " game.";
+	return "It's a " + RandomWord(NumPlayer) + " player " +
+		RandomWord(GameView) + RandomWord(GameLevel) + RandomWord(GameTick) + 
+		" " + RandomWord(GameGenre) + " game.";
 }
 var GameTypeObj = {
 	PlayerNumber: "",
