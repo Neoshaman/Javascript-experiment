@@ -71,7 +71,8 @@ var PlayerModus			= ["mentoring new life form","building a team",
 							"killing everything"];
 function concept() {
 	return	"<font color = \"green\">(Role)</font> Where the player is a " + RandomWord(PlayerRole) + "<br>" +
-	"<font color = \"green\">(Quest: <font color = \"gray\">action, target, motivation</font>)</font> who want to " + RandomWord(PlayerAction) + " " + RandomWord(PlayerTarget) + " for " + RandomWord(PlayerMotivation) + "<br>" +
+	"<font color = \"green\">(Quest: <font color = \"gray\">action, target, motivation</font>)</font> " + "<br>" +
+	"who want to " + RandomWord(PlayerAction) + " " + RandomWord(PlayerTarget) + " for " + RandomWord(PlayerMotivation) + "<br>" +
 	"<font color = \"green\">(Failure condition)</font> without " + RandomWord(PlayerFailure) +
 	"<br> <font color = \"green\">(Progression)</font> by " + RandomWord (PlayerModus);
 }
