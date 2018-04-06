@@ -11,14 +11,14 @@ var GameView			= ["text","side scroller","top down","first person",
 var GameLevel			= [" open world ", " linear ", " non linear", " corridor ", 
 							" infinite "," auto scrolling ", " on rail ", " aimless ",
 							" sandbox ", " multi ending ", " branching "," arena ",
-							" metroidvania "," immersive "," deck building "," turn based "];
+							" metroidvania "," immersive "," deck building "];
 var GameTick			= [" turn based ", " real time ", " asynchrone "]
-var GameGenre			= ["story","roguelike","beat'm up",
-							"sport","combat","building","art","social",
+var GameGenre			= ["story","roguelike","rogue lite","beat'm up",
+							"sport","combat","building","art",
 							"hop and bop","social","shooter","4X","puzzle","strategy",
-							"tactic","racing","simulation","driving","rogue lite",
+							"tactic","racing","simulation","driving",
 							"management","artillery","dollhouse","adventure",
-							"rpg",,"Wrpg","Jrpg","Crpg", "collecthon","brawler"];
+							"rpg","Wrpg","Jrpg","Crpg", "collecthon","brawler"];
 function gametype() {
 	return "It's a " + RandomWord(NumPlayer) + " " + ", " +
 		RandomWord(GameView) + RandomWord(GameLevel) + "," + RandomWord(GameTick) + 
