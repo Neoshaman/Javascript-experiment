@@ -14,7 +14,7 @@ var GameView			= ["text","alternate reality",//text based
 				   "split screen","augmented reality"];//alternatives
 var GameLevel			= [" open world ", " arena "," metroidvania "," non linear ",//open structure
 				   " linear ",  " corridor ", " branching ",//linear structures
-				   " infinite "," aimless "," sandbox ", " multi ending "//---goal type
+				   " infinite "," aimless "," sandbox ", " multi ending ",//---goal type
 				   " auto scrolling ", " on rail "," deck building "];//---method of navigation
 var GameTick			= [RandomWord(NumPlayer)," turn based ", " real time ", " asynchrone "]
 var GameGenre			= ["story","art","social","dollhouse","adventure",//narrative
