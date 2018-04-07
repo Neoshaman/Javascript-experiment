@@ -1,6 +1,7 @@
 
 //GAME DESIGN---------------------------------------------------------------------------------------------
 //--- -> mean it's another category of its own
+//put all array group into its own object to allow nested function refresh?
 //type of game			//It's a NumPlayer player GameView GameGenre game
 var NumPlayer			= ["single player","multi players","massively multi players",
 				   "two players","4 players","8 players",
@@ -16,7 +17,7 @@ var GameLevel			= [" open world ", " arena "," metroidvania "," non linear ",//o
 				   " linear ",  " corridor ", " branching ",//linear structures
 				   " infinite "," aimless "," sandbox ", " multi ending ",//---goal type
 				   " auto scrolling ", " on rail "," deck building "];//---method of navigation
-var GameTick			= [RandomWord(NumPlayer)," turn based ", " real time ", " asynchrone "]
+var GameTick			= [" turn based ", " real time ", " asynchrone "]
 var GameGenre			= ["story","art","social","dollhouse","adventure",//narrative
 				   "sport","racing","driving",//sport
 				   "4X","strategy","tactic",//wargames
