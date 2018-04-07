@@ -1,24 +1,31 @@
 
 //GAME DESIGN---------------------------------------------------------------------------------------------
+//--- -> mean it's another category of its own
 //type of game			//It's a NumPlayer player GameView GameGenre game
-var NumPlayer			= ["single player","multi players","p2p","two players","4 players","8 players",
-							"16 players","24 players","32 players","64 players", "MMO",
-				   			"massively multi players"];
-var GameView			= ["text","side scroller","top down","first person",
-							"third person","over the shoulder","split screen",
-							"isometric","axonometric","alternate reality",
-							"augmented reality","virtual reality"];
-var GameLevel			= [" open world ", " linear ", " non linear", " corridor ", 
-							" infinite "," auto scrolling ", " on rail ", " aimless ",
-							" sandbox ", " multi ending ", " branching "," arena ",
-							" metroidvania "," immersive "," deck building "];
-var GameTick			= [" turn based ", " real time ", " asynchrone "]
-var GameGenre			= ["story","roguelike","rogue lite","beat'm up",
-							"sport","combat","building","art",
-							"hop and bop","social","shooter","4X","puzzle","strategy",
-							"tactic","racing","simulation","driving",
-							"management","artillery","dollhouse","adventure",
-							"rpg","Wrpg","Jrpg","Crpg", "collecthon","brawler"];
+var NumPlayer			= ["single player","multi players","massively multi players",
+				   "two players","4 players","8 players",
+				   "16 players","24 players","32 players","64 players",
+				   "p2p","online","MMO",
+				   "on site"];//---place of play
+var GameView			= ["text","alternate reality",//text based
+				   "side scroller",//2d vertical
+				   "top down","isometric","axonometric",//2d top down
+				   "first person","third person","over the shoulder","virtual reality",//3d map
+				   "split screen","augmented reality"];//alternatives
+var GameLevel			= [" open world ", " arena "," metroidvania "," non linear ",//open structure
+				   " linear ",  " corridor ", " branching ",//linear structures
+				   " infinite "," aimless "," sandbox ", " multi ending "//---goal type
+				   " auto scrolling ", " on rail "," deck building "];//---method of navigation
+var GameTick			= [RandomWord(NumPlayer)," turn based ", " real time ", " asynchrone "]
+var GameGenre			= ["story","art","social","dollhouse","adventure",//narrative
+				   "sport","racing","driving",//sport
+				   "4X","strategy","tactic",//wargames
+				   "building","management","simulation","puzzle",//maanagement
+				   "platformer","hop and bop","collecthon",//platformer
+				   "beat'm up","combat","brawler","fighting",//fighting
+				   "artillery","shooter",//shooting
+				   "roguelike","rogue lite",//pcg
+				   "rpg","Wrpg","Jrpg","Crpg"];//rpg
 function gametype() {
 	return "It's a " + RandomWord(NumPlayer) + " " + ", " +
 		RandomWord(GameView) + RandomWord(GameLevel) + "," + RandomWord(GameTick) + 
@@ -32,8 +39,8 @@ var GameTypeObj = {
 };
 //***********************************************************							
 //world design			//set in WorldSize WorldTone WorldGenre world
-var WorldSize			= ["tiny","medium size","big","huge", "infinite"];
-var WorldTone			= ["dark","atmospheric","funny","dangerous",
+var WorldSize			= ["tiny","medium size","big","huge", "infinite"];//arbitrary size = 1²,3²,5²,7²,inf
+var WorldTone			= ["dark","atmospheric","funny","dangerous"," immersive ",
 							"typical", "cinematic", "beautiful","cartoon"];
 var WorldGenre			= ["dream","prehistoric","futuristic","superheroes",
 							"noir","steampunk","cyberpunk","fantasy",
@@ -56,7 +63,7 @@ var PlayerRole			= ["wizard","tomboy","sorcerer","sorceress","cosmonaut",
 							"effeminate hero"];
 						//who want to PlayerAction PlayerTarget for PlayerMotivation
 var PlayerAction		= ["wait","attack","assemble","liberate","recover",
-							"observe","gather","collect","goto","create","destroy",
+							"observe","gather","collect","go to","create","destroy",
 							"trade","use","take","defend","kill","talk",
 							"intercept","guard","transport","escort"];
 var PlayerTarget		= ["monster","npc","message","secret of dangerous place",
