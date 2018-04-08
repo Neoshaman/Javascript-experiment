@@ -62,7 +62,8 @@ var PlayerRole			= ["wizard","tomboy","sorcerer","sorceress","cosmonaut",
 							"guy","soldier","bro dude","faery","man","man",
 							"mascot animal","regular person","game designer",
 							"effeminate hero"];
-						//who want to PlayerAction PlayerTarget for PlayerMotivation
+						//quest->who want to PlayerAction PlayerTarget for PlayerMotivation
+						//-> characterize them as DO (single objectives) or BE (maintenance through affordances)
 var PlayerAction		= ["wait","attack","assemble","liberate","recover",
 							"observe","gather","collect","go to","create","destroy",
 							"trade","use","take","defend","kill","talk",
