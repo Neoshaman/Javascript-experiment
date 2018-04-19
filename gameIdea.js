@@ -16,7 +16,7 @@ var GameView			= ["text","alternate reality",//text based
 var GameLevel			= [" open world ", " arena "," metroidvania "," non linear ",//open structure
 				   " linear ",  " corridor ", " branching ",//linear structures
 				   " infinite "," aimless "," sandbox ", " multi ending ",//---goal type
-				   " auto scrolling ", " on rail "," deck building "];//---method of navigation
+				   " auto scrolling ", " on rail "," deck building "];//---method of navigation, movement type
 var GameTick			= [" turn based ", " real time ", " asynchrone "]
 var GameGenre			= ["story","art","social","dollhouse","adventure",//narrative
 				   "sport","racing","driving",//sport
