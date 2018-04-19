@@ -11,6 +11,7 @@ var NumPlayer			= ["single player","multi players","massively multi players",
 var GameView			= ["text","alternate reality",//text based
 				   "side scroller",//2d vertical
 				   "top down","isometric","axonometric",//2d top down
+				   "card based","board based",//abstract form
 				   "first person","third person","over the shoulder","virtual reality","fixed camera",//3d map
 				   "split screen","augmented reality"];//alternatives
 var GameLevel			= [" open world ", " arena "," metroidvania "," non linear ",//open structure
@@ -22,7 +23,7 @@ var GameTick			= [" turn based ", " real time ", " asynchrone "]
 var GameGenre			= ["story","art","social","dollhouse","adventure",//narrative
 				   "sport","racing","driving",//sport
 				   "4X","strategy","tactic",//wargames
-				   "building","management","simulation","puzzle","card",//maanagement
+				   "building","management","simulation","puzzle",//maanagement
 				   "platformer","hop and bop","collecthon",//platformer
 				   "beat'm up","combat","brawler","fighting",//fighting
 				   "artillery","shooter",//shooting
