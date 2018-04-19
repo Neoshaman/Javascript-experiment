@@ -22,7 +22,7 @@ var GameTick			= [" turn based ", " real time ", " asynchrone "]
 var GameGenre			= ["story","art","social","dollhouse","adventure",//narrative
 				   "sport","racing","driving",//sport
 				   "4X","strategy","tactic",//wargames
-				   "building","management","simulation","puzzle",//maanagement
+				   "building","management","simulation","puzzle","card",//maanagement
 				   "platformer","hop and bop","collecthon",//platformer
 				   "beat'm up","combat","brawler","fighting",//fighting
 				   "artillery","shooter",//shooting
