@@ -11,7 +11,7 @@ var NumPlayer			= ["single player","multi players","massively multi players",
 var GameView			= ["text","alternate reality",//text based
 				   "side scroller",//2d vertical
 				   "top down","isometric","axonometric",//2d top down
-				   "card based","board based",//abstract form
+				   "card based","board based","menu based",//abstract form
 				   "first person","third person","over the shoulder","virtual reality","fixed camera",//3d map
 				   "split screen","augmented reality"];//alternatives
 var GameLevel			= [" open world ", " arena "," metroidvania "," non linear ",//open structure
