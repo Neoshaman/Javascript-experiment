@@ -40,14 +40,14 @@ var GameTypeObj = {
 };
 //***********************************************************							
 //world design			//set in WorldSize WorldTone WorldGenre world
-var WorldSize			= ["tiny","medium size","big","huge", "infinite"];//arbitrary size = 1²,3²,5²,7²,inf
+var WorldSize			= ["tiny","medium size","big","huge", "infinite"];//arbitrary size = 1²,3²,5²,7²,inf in km, should add a scope element (the unit size) from room to galactic universe
 var WorldTone			= ["dark","atmospheric","funny","dangerous"," immersive ",
-							"typical", "cinematic", "beautiful","cartoon"];
+							"typical", "cinematic", "beautiful","cartoon"];//need more practical classification?
 var WorldGenre			= ["dream","prehistoric","futuristic","superheroes",
 							"noir","steampunk","cyberpunk","fantasy",
 							"sword and sorcery","science fiction","urban",
 							"space opera","underground","hardboiled",
-							"underwater","post apocalyptic","military"];
+							"underwater","post apocalyptic","military"];//basically the set of objects, bahevior and rules, need a breakdown, possibly generating one from scratch
 function worldtype() {
 	return "Set in " + RandomWord(WorldSize) + " " + RandomWord(WorldTone) + " " + RandomWord(WorldGenre) + " world.";
 }
@@ -61,23 +61,23 @@ var WorldTypeObj = {
 var PlayerRole			= ["wizard","tomboy","sorcerer","sorceress","cosmonaut",
 							"guy","soldier","bro dude","faery","man","man",
 							"mascot animal","regular person","game designer",
-							"effeminate hero"];
+							"effeminate hero"];//need a better breakdown and a character generator
 						//quest->who want to PlayerAction PlayerTarget for PlayerMotivation
 						//-> characterize them as DO (single objectives) or BE (maintenance through affordances)
 var PlayerAction		= ["wait","attack","assemble","liberate","recover",
 							"observe","gather","collect","go to","create","destroy",
 							"trade","use","take","defend","kill","talk",
-							"intercept","guard","transport","escort"];
+							"intercept","guard","transport","escort"];//need formalization
 var PlayerTarget		= ["monster","npc","message","secret of dangerous place",
-							"data","magic equipment","scientific technology"];
+							"data","magic equipment","scientific technology"];//need formalization and classification of type
 var PlayerMotivation	= ["spirit","conquest","serenity","wealth","protection",
 							"potential","reputation","ability","knowledge",
-							"equipment","comfort"];
+							"equipment","comfort"];//need formalization, too random
 						//without PlayerFailure by PlayerModus
-var PlayerFailure		= ["dying","getting lost"];
+var PlayerFailure		= ["dying","getting lost"];//need to think what's the difference with quest structure and how it relate to goal structure, thinking avoidance verbs? also anti motivation is needed?
 var PlayerModus			= ["mentoring new life form","building a team",
 							"looking for hint","navigating the world",
-							"killing everything"];
+							"killing everything"];//that's full of bullshit lol, but it's basically a quest structure
 function concept() {
 	return	"<font color = \"green\">(Role)</font> Where the player is a " + RandomWord(PlayerRole) + "<br>" +
 	"<font color = \"green\">(Quest: <font color = \"gray\">action, target, motivation</font>)</font> " + "<br>" +
@@ -101,19 +101,18 @@ var ModusObj = {//is a type of quest
 };
 //***********************************************************
 //STORY SETTING---------------------------------------------------------------------------------------------------------
-var StoryAttraction		= ["fear","desire"];//"apathy?" no because it's the tension that move the plot
+var StoryAttraction		= ["fear","desire"];//"apathy?" no? because it's the tension that move the plot
 var StoryCost			= ["obtain","lose"]; 
 var StoryValence		= ["bad","good","neutral"]; //good -> positif, bad -> negatif
 var StoryNeed			= ["safety","social relationship","personal growth"];//achievement = aspiration = growth, relation = social
 var StorySpace			= ["external process <font color = \"gray\">(event pattern)</font>",
 							"external state <font color = \"gray\">(physical space)</font>",
 							"internal state <font color = \"gray\">(mindset)</font>",
-							"internal process <font color = \"gray\">(behavior pattern)</font>"];//["event pattern","physical space","mindset","behavior pattern"];//(>>internal/external + process/state) //attitude -> mindset, event -> activity
+							"internal process <font color = \"gray\">(behavior pattern)</font>"];//most difficult to translate lol, still trying to figure it out//["event pattern","physical space","mindset","behavior pattern"];//(>>internal/external + process/state) //attitude -> mindset, event -> activity
 var StoryTargets		= ["itself","someone","everybody","other"];
-var StoryAction			= ["increase","ignore","maintain","decrease"];//["spend","ignore","hold","destroy"];
+var StoryAction			= ["increase","ignore","maintain","decrease"];//["spend","ignore","hold","destroy"]; should be about resource management, not sure how to make it make sense
 
 function RandomWord(word){
-	//alert("here")
 	return word[ Math.floor(Math.random() * word.length)];
 }
 
