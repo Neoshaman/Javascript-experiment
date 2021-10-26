@@ -5,21 +5,25 @@
 //type of game			//It's a NumPlayer player GameView GameGenre game
 var NumPlayer		= ["single player","multi players","massively multi players",
 				   "two players","4 players","8 players",
-				   "16 players","24 players","32 players","64 players",
-				   "p2p","online","MMO",// ---methode of connection
-				   "on site"];//---place of play (play space)
+				   "16 players","24 players","32 players","64 players"
+				   // ---methode of connection
+				   ];//---place of play (play space)
+				   
 var GameView		= ["text","alternate reality",//text based
 				   "side scroller",//2d vertical
 				   "top down","isometric","axonometric",//2d top down
 				   "card based","board based","menu based",//abstract form
 				   "first person","third person","over the shoulder","virtual reality","fixed camera",//3d map
 				   "split screen","augmented reality"];//alternatives
+
 var GameLevel		= [" open world ", " arena "," metroidvania "," non linear ",//open structure
-				   " linear ",  " corridor ", " branching ",//linear structures
-				   " infinite "," aimless "," sandbox ", " multi ending ",//---goal type
-				   " auto scrolling ", " on rail ",//---method of navigation, movement type
-				   " deck building "];//---type of interaction
+				   " linear ",  " corridor ", " branching "//linear structures
+				   //---goal type
+				   //---method of navigation, movement type
+				   ];//---type of interaction
+
 var GameTick		= [" turn based ", " real time ", " asynchrone "];
+
 var GameGenre		= ["story","art","social","dollhouse","adventure",//narrative
 				   "sport","racing","driving",//sport
 				   "4X","strategy","tactic",//wargames
@@ -29,15 +33,21 @@ var GameGenre		= ["story","art","social","dollhouse","adventure",//narrative
 				   "artillery","shooter",//shooting
 				   "roguelike","rogue lite",//pcg
 				   "rpg","Wrpg","Jrpg","Crpg"];//rpg
-var GameNavigation = [];
-var GameGoals	   = [];
-var GameInteractionType =[];
-var GamePlaySpace
+
+var GameNavigation = [" auto scrolling ", " on rail "];
+var GameGoals	   = [" infinite "," aimless "," sandbox ", " multi ending "];
+var GameInteractionType = [" deck building "];
+var GamePlaySpace  = ["on site"];
+var GameConnection = ["p2p","online","MMO"];
 
 function gametype() {
-	return "It's a " + RandomWord(NumPlayer) + " " + ", " +
-		RandomWord(GameView) + RandomWord(GameLevel) + "," + RandomWord(GameTick) + 
-		" " + RandomWord(GameGenre) + " game.";
+	return "It's a "
+	+ RandomWord(NumPlayer) + " " + ", "
+	+ RandomWord(GameView)
+	+ RandomWord(GameLevel) + ","
+	+ RandomWord(GameTick) + " "
+	+ RandomWord(GameGenre)
+	+ " game.";
 }
 var GameTypeObj = {
 	PlayerNumber: "",
