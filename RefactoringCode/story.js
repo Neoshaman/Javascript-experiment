@@ -11,9 +11,6 @@ var StorySpace			= ["external process <font color = \"gray\">(event pattern)</fo
 var StoryTargets		= ["itself","someone","everybody","other"];
 var StoryAction			= ["increase","ignore","maintain","decrease"];//["spend","ignore","hold","destroy"]; should be about resource management, not sure how to make it make sense
 
-function RandomWord(word){
-	return word[ Math.floor(Math.random() * word.length)];
-}
 
 //resolution
 //StoryAttraction to StoryCost - StoryValence StoryNeed of StorySpace for StoryTargets
