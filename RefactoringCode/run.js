@@ -1,9 +1,9 @@
-var elem1 = document.getElementById("test");
-var elem2 = document.getElementsByTagName("p");
+var elem1 = document.getElementById("test")
+var elem2 = document.getElementsByTagName("p")
 
-elem1.innerHTML = " something1";
-elem2[0].innerHTML = " something2";
-GameDesign();
+elem1.innerHTML = " something1"
+elem2[0].innerHTML = " something2"
+GameDesign()
 //setInterval(GameDesign,10000);
 
 //todo
