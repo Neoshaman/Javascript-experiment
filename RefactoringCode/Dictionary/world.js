@@ -1,6 +1,6 @@
-const WorldDesign = {
-	Name : "World",
-	Elements : {	
+class WorldDesign {
+	static name = "World"
+	static elements = {	
 		//world design
 		//set in WorldSize WorldTone WorldGenre world
 		WorldSize			:	["tiny","medium size","big","huge", "infinite"],	//arbitrary size = 1²,3²,5²,7²,inf in km, should add a scope element (the unit size) from room to galactic universe
@@ -13,12 +13,14 @@ const WorldDesign = {
 								"underwater","post apocalyptic","military"]			//basically the set of objects, bahevior and rules, need a breakdown, possibly generating one from scratch
 	}
 }
-						
-function worldtype() {
-	return `Set in ${RandomWord(WorldSize)} ${RandomWord(WorldTone)} ${RandomWord(WorldGenre)} world.`
+class world extends gameGenerator {
+	reference = WorldDesign
+	data = {
+		worldSize: "",
+		worldTone: "",
+		worldGenre: ""
+	}			
+	defaultString() {
+		return `Set in ${RandomWord(WorldSize)} ${RandomWord(WorldTone)} ${RandomWord(WorldGenre)} world.`
+	}
 }
-var WorldTypeObj = {
-	worldSize: "",
-	worldTone: "",
-	worldGenre: ""
-};

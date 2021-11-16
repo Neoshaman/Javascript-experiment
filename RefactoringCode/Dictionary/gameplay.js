@@ -1,6 +1,6 @@
-const Gameplay = {
-	name: "Gameplay",
-	Element: {
+class Gameplay {
+	static name = "Gameplay"
+	static element = {
 		//gameplay concept
 		//where the player is a PlayerRole				
 		PlayerRole			:	["wizard","tomboy","sorcerer","sorceress","cosmonaut",
@@ -33,27 +33,59 @@ const Gameplay = {
 	}
 }
 
-function concept() {
-	return	`<font color = \"green\">(Role)</font> Where the player is a ${RandomWord(PlayerRole)}<br>
+class gameplayGenerator{
+	static reference = Gameplay
+}
 
-	<font color = \"green\">(Quest: <font color = \"gray\">action, target, motivation</font>)</font><br>
-	who want to ${RandomWord(PlayerAction)} ${RandomWord(PlayerTarget)} for ${RandomWord(PlayerMotivation)}<br>
+class design extends gameplayGenerator{
+	data = {
+		role: "",
+		quest:"",
+		failure:"",
+		modus:""
+	}
+	defaulString() {
+		return	`<font color = \"green\">(Role)</font> Where the player is a ${RandomWord(PlayerRole)}<br>
 
-	<font color = \"green\">(Failure condition)</font> without ${RandomWord(PlayerFailure)}<br>
-	
-	<font color = \"green\">(Progression)</font> by ${RandomWord(PlayerModus)}`
+		<font color = \"green\">(Quest: <font color = \"gray\">action, target, motivation</font>)</font><br>
+		who want to ${RandomWord(PlayerAction)} ${RandomWord(PlayerTarget)} for ${RandomWord(PlayerMotivation)}<br>
+
+		<font color = \"green\">(Failure condition)</font> without ${RandomWord(PlayerFailure)}<br>
+		
+		<font color = \"green\">(Progression)</font> by ${RandomWord(PlayerModus)}`
+	}
 }
-var RoleObj = {
-	Role: ""
+class role extends gameplayGenerator{
+	data = {
+		role:""
+	}
+	defaulString(){ return 	`<font color = \"green\">(Role)</font> Where the player is a ${RandomWord(PlayerRole)}<br>`
+	}
 }
-var QuestObj = {
-	action: "",
-	target: "",
-	motivation: ""
+class quest extends gameplayGenerator{
+	data={
+		action:"",
+		target:"",
+		motivation:""
+	}
+	defaulString(){
+		return 	`<font color = \"green\">(Quest: <font color = \"gray\">action, target, motivation</font>)</font><br>
+		who want to ${RandomWord(PlayerAction)} ${RandomWord(PlayerTarget)} for ${RandomWord(PlayerMotivation)}<br>`
+	}
 }
-var FailureObj = {//is a type of quest
-	failure: ""
+class failure extends gameplayGenerator{//is a type of quest
+	data = {
+		failure:""
+	}
+	defaulString(){
+		return 	`<font color = \"green\">(Failure condition)</font> without ${RandomWord(PlayerFailure)}<br>`
+	}
 }
-var ModusObj = {//is a type of quest
-	modus: ""
+class modus  extends gameplayGenerator{//is a type of quest
+	data = {
+		modus:""
+	}
+	defaulString(){
+		return 	`<font color = \"green\">(Progression)</font> by ${RandomWord(PlayerModus)}`
+	}
 }

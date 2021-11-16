@@ -1,8 +1,6 @@
-const GameConcept =
-{
-	Name: "Game concept",
-	Elements: {	//game design
-
+class GameConcept {
+	static name = "Game concept"
+	static elements = {
 		//what bout an array of object with name, data list?
 		//but i need query per name too
 		NumberPlayer:		["single player","multi players","massively multi players",
@@ -43,8 +41,24 @@ const GameConcept =
 		Connection:			["p2p","online","MMO"]
 		//mechanics? -> in gameplay.js? "skill tree"?
 		//game length?
-	},
-	String:  `It's a 
+	}
+}
+Object.seal(GameConcept)
+class concept extends gameGenerator{
+	reference = GameConcept
+	data = {
+		NumberPlayer: "",
+		View: "",
+		LevelDesign: "",
+		Tick: "",
+		Genre: "",
+		Navigation: "",
+		Goals: "",
+		Interaction: "",
+		PlaySpace: "",
+		Connection: ""
+	}
+	defaulString(){ return  `It's a 
 			${this.Elements.level}
 			${this.Elements.NumberPlayer}, 
 			${this.Elements.View}, 
@@ -54,7 +68,7 @@ const GameConcept =
 			${this.Elements.goal} 
 			${this.Elements.Interaction} 
 			${this.Elements.space} 
-			${this.Elements.Connection}`
+			${this.Elements.Connection}`}
 	//it's a "single player" "3rd person" "linear" "real time" "shooter" game
 	
 	//that you navigate with "", and interact with "",  and it's ...goal
@@ -71,8 +85,6 @@ const GameConcept =
 	//"tick" "goal" "genre" game with "interaction",
 	//played "space"  
 }
-
-Object.seal(GameConcept)
 
 //return object with tuple [index,string]??
 //obj = {name:"",index:0, content: "content"}??

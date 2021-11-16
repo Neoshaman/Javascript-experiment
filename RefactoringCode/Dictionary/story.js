@@ -1,6 +1,6 @@
-const story = {
-	name: "Story",
-	elements: {
+class story {
+	static name = "Story"
+	static elements = {
 		//STORY SETTING
 		//---------------------------------------------------------------------------------------------------------
 		StoryAttraction		: ["fear","desire"],								//"apathy?" no? because it's the tension that move the plot
@@ -34,158 +34,158 @@ const story = {
 		SetupPeople		: ["person", "group"]									//to person/group 
 	}
 }
+Object.seal(story)
 
-//resolution
-//StoryAttraction to StoryCost - StoryValence StoryNeed of StorySpace for StoryTargets
-function resolution() {
-	return `
-	${RandomWord(StoryAttraction)} to 
-	${RandomWord(StoryCost)} 
-	${RandomWord(StoryValence)} 
-	${RandomWord(StoryNeed)}, caused by 
-	${RandomWord(StorySpace) /*of -> in -> caused by*/}, for 
-	${RandomWord(StoryTargets)}`
-}
-var ResolutionObj = {
-	attraction: "",
-	cost: "",
-	valence: "",
-	need: "",
-	space: "",
-	target: ""
+class storyGenerator extends gameGenerator{
+	static reference = story
 }
 
+//resolution: StoryAttraction to StoryCost - StoryValence StoryNeed of StorySpace for StoryTargets
+class resolution extends storyGenerator{
+	data = {
+		attraction: "",
+		cost: "",
+		valence: "",
+		need: "",
+		space: "",
+		target: ""
+	}
+	defaultString() {
+		return `
+		${RandomWord(StoryAttraction)} to 
+		${RandomWord(StoryCost)} 
+		${RandomWord(StoryValence)} 
+		${RandomWord(StoryNeed)}, caused by 
+		${RandomWord(StorySpace) /*of -> in -> caused by*/}, for 
+		${RandomWord(StoryTargets)}`
+	}
 
-//attitude
-//StoryTargets StoryAction - StoryValence StoryNeed of StorySpace for StoryTargets
-function attitude() {
-	return `
-	${RandomWord(StoryTargets)} 
-	${RandomWord(StoryAction)} 
-	${RandomWord(StoryValence)} 
-	${RandomWord(StoryNeed)}, caused by 
-	${RandomWord(StorySpace) /*of -> in -> caused by*/}, for 
-	${RandomWord(StoryTargets)}`
 }
-var AttitudeObj = {
-	target1: "",
-	action: "",
-	valence: "",
-	need: "",
-	space: "",
-	target2:""	
+//attitude: StoryTargets StoryAction - StoryValence StoryNeed of StorySpace for StoryTargets
+class attitude extends storyGenerator{
+	data = {
+		target1: "",
+		action: "",
+		valence: "",
+		need: "",
+		space: "",
+		target2:""	
+	}
+	defaultString() {
+		return `
+		${RandomWord(StoryTargets)} 
+		${RandomWord(StoryAction)} 
+		${RandomWord(StoryValence)} 
+		${RandomWord(StoryNeed)}, caused by 
+		${RandomWord(StorySpace) /*of -> in -> caused by*/}, for 
+		${RandomWord(StoryTargets)}`
+	}
 }
-
-
-//action
-//StoryAction StoryNeed of StoryTargets
-function action() {
-	return `
-	${RandomWord(StoryAction)} 
-	${RandomWord(StoryNeed)} of 
-	${RandomWord(StoryTargets)}`
+//action: StoryAction StoryNeed of StoryTargets
+class action extends storyGenerator {
+	data = {
+		action: "",
+		need: "",
+		target: ""
+	}
+	defaultString(){return `
+		${RandomWord(StoryAction)} 
+		${RandomWord(StoryNeed)} of 
+		${RandomWord(StoryTargets)}`
+	}
 }
-var ActionObj = {
-	action: "",
-	need: "",
-	target: ""
+//event: StoryTargets StoryAction StoryNeed of StoryTargets
+class event extends storyGenerator {
+	data = {
+		target1: "",
+		action:"",
+		need:"",
+		target2: ""
+	}
+	defaultString() {
+		return `
+		${RandomWord(StoryTargets)} 
+		${RandomWord(StoryAction)} 
+		${RandomWord(StoryNeed)} of 
+		${RandomWord(StoryTargets)}`
+	}
 }
-
-
-//event
-//StoryTargets StoryAction StoryNeed of StoryTargets
-function events() {
-	return `
-	${RandomWord(StoryTargets)} 
-	${RandomWord(StoryAction)} 
-	${RandomWord(StoryNeed)} of 
-	${RandomWord(StoryTargets)}`
+//balance: StoryValence StoryNeed of StorySpace for StoryTargets 
+//(theme) is greater than theme)
+class theme extends storyGenerator {
+	data = {
+		valence: "",
+		need: "",
+		space: "",
+		target: ""
+	}
+	defaultString() {
+		return `
+		${RandomWord(StoryValence)} 
+		${RandomWord(StoryNeed)}, caused by 
+		${RandomWord(StorySpace)}, for 
+		${RandomWord(StoryTargets)}`
+	}
 }
-var eventObj = {
-	target1: "",
-	action:"",
-	need:"",
-	target2: ""
+class balance extends storyGenerator {
+	data = {
+		theme1: "",
+		theme2: ""
+	}
+	defaultString() {
+		return `
+		${theme()} <br> is greater than <br> 
+		${theme()}`;
+	}
 }
-
-
-//balance
-//StoryValence StoryNeed of StorySpace for StoryTargets (theme)
-//is greater than
-//(theme)
-function theme() {
-	return `
-	${RandomWord(StoryValence)} 
-	${RandomWord(StoryNeed)}, caused by 
-	${RandomWord(StorySpace)}, for 
-	${RandomWord(StoryTargets)}`
-}
-
-var ThemeObj = {
-	valence: "",
-	need: "",
-	space: "",
-	target: ""
-}
-
-function balance() {
-	return `
-	${theme()} <br> is greater than <br> 
-	${theme()}`;
-}	
-var QuestObj = {
-	theme1: "",
-	theme2: ""
-}
-	
-//--------------------
-
-function setupProcess() {
-	return `
-	${RandomWord(SetupTendency)} change 
-	${RandomWord(SetupOccurrance)} to 
-	${RandomWord(SetupTarget)}`
-}
-
-var ProcessObject = {
+class process extends storyGenerator {
+	data = {
 	Tendency : "",
 	Occurrance : "",
 	Target : ""
+	}
+	defaultString() {
+		return `
+		${RandomWord(SetupTendency)} change 
+		${RandomWord(SetupOccurrance)} to 
+		${RandomWord(SetupTarget)}`
+	}
 }
-	
-function setupState() {
-	return `
-	${RandomWord(SetupQuantity)} of 
-	${RandomWord(SetupTarget)} provoke 
-	${RandomWord(SetupIssue)}`
+class state extends storyGenerator {
+	data = {
+		Quantity : "",
+		Target : "",
+		Issue : ""
+	}
+	defaultString() {
+		return `
+		${RandomWord(SetupQuantity)} of 
+		${RandomWord(SetupTarget)} provoke 
+		${RandomWord(SetupIssue)}`
+	}
 }
-
-var StateObject = {
-	Quantity : "",
-	Target : "",
-	Issue : ""
-}
-
-function SetupType(){ var r = Math.random()*2; 
+class type extends storyGenerator {//-----------------------------<<<<<
+	SetupType(){ var r = Math.random()*2; 
 					if (r > 1)
 						{ return `1. ${setupProcess()}`}
 					else{ return `2. ${setupState()}`}
-}//the process/state
-
-function setupResult(){
-	return `
-	${SetupType()}, 
-	${RandomWord(SetupTense)} <font color = \"blue\">
-	${RandomWord(StoryValence)} 
-	${RandomWord(StoryNeed)}, caused by 
-	${RandomWord(StorySpace)}</font>, to 
-	${RandomWord(SetupPeople)}`
+	}//the process/state
 }
-
-var ResultObject = {
-	Tense: "",
-	Valence : "",
-	Need : "",
-	Space : "",
-	People : ""
+class Result extends storyGenerator {
+	data = {
+		Tense: "",
+		Valence : "",
+		Need : "",
+		Space : "",
+		People : ""
+	}
+	defaultString(){
+		return `
+		${SetupType()}, 
+		${RandomWord(SetupTense)} <font color = \"blue\">
+		${RandomWord(StoryValence)} 
+		${RandomWord(StoryNeed)}, caused by 
+		${RandomWord(StorySpace)}</font>, to 
+		${RandomWord(SetupPeople)}`
+	}
 }

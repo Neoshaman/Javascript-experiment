@@ -1,13 +1,27 @@
-class generator{
-	
-//createEmptyObjectFrom(Dictionary){}
+class gameGenerator{
+	name;
+	id;
+	reference;
+	data;
+	defaultString(){}
+
+//createEmptyObjectFrom(){}
+
+//check empty field
+
 //createRandomDataObjectFrom(Dictionary){}
+
 //createObjectFromData(Dictionary,array){}
+
 //changeData(Object, Dictionary, array){}
+
 //clearData(Object){}
+
 //objectToString(Object){}
 
 //showElements(dictionary.elements)
+
+//findleaf()
 
 //showElement: function(list){//KeyName instead of list or KeyNameOfList
 //		let result = ""
@@ -20,12 +34,29 @@ class generator{
 //what if object are just array of integer that reference the dictionary
 
 //
+
+
+	static RandomWord(word){
+		return word[ Math.floor(Math.random() * word.length)]
+	}
+
+	static randomFromArray(array){
+		let index = Math.floor(Math.random() * array.length)
+		return array[index]
+	}
+
+	static randomIndexFromArray(array){
+		let index = Math.floor(Math.random() * array.length)
+		return index
+	}
+
+	static randomArrayTuple(array){
+		let number = Math.floor(Math.random() * array.length)
+		return {index: number, content: array[index]}
+	}
 }
 
-//randomArray()
-function RandomWord(word){
-	return word[ Math.floor(Math.random() * word.length)]
-}
+
 //dictionary
 //name
 //elements
