@@ -1,4 +1,15 @@
 //RESEARCH
+//https://blog.unity.com/technology/semantic-game-builder-interface-to-be-integrated-into-unity (joke)
+
+//todo
+//character attribute generator
+//world attribute generator
+//place attribute generator
+//detail progression generator
+//genre generator
+//story structure generator
+
+
 //-----------------------------------------------------------------------------------------------------
 
 //groupObj -> has -> member (role)

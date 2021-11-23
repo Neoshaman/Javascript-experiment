@@ -1,15 +1,12 @@
-var elem1 = document.getElementById("test")
-var elem2 = document.getElementsByTagName("p")
+//import as xxx from '../xxx/xxx.js'
+class main{
+    run(){
+    let pitch = new designDocument()
 
-elem1.innerHTML = " something1"
-elem2[0].innerHTML = " something2"
-GameDesign()
-//setInterval(GameDesign,10000);
+    //generate new document data before
 
-//todo
-//character attribute generator
-//world attribute generator
-//place attribute generator
-//detail progression generator
-//genre generator
-//story structure generator
+    pitch.getDefaultString()
+
+    //setInterval(GameDesign,10000);
+    }
+}
