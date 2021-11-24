@@ -1,4 +1,3 @@
-
 class gameGenerator{
 
 	name		= "empty"
